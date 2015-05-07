@@ -27,7 +27,7 @@ BuildRequires:  python3-pbr
 BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
 BuildRequires:  python-oslo-sphinx
-BuildRequires:  git
+#BuildRequires:  git
 Requires: python-babel
 Requires: python-ipaddr
 Requires: python-netaddr
@@ -43,7 +43,8 @@ Requires: python-pbr
 
 
 %prep
-%autosetup -S git -v -n hardware-%{upstream_version}
+%autosetup -p1 -n hardware-%{upstream_version}
+
 rm -rf *.egg-info
 
 %if 0%{?with_python3}
