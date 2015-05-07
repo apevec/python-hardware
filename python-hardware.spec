@@ -8,7 +8,7 @@
 Name:           python-hardware
 Summary:        Hardware detection and classification utilities
 Version:        0.14
-Release:        2%{?dist}
+Release:        3%{?dist}
 License:        ASL 2.0
 Group:          Development/Languages
 URL:            https://pypi.python.org/pypi/hardware
@@ -31,7 +31,12 @@ BuildRequires:  git
 Requires: python-babel
 Requires: python-ipaddr
 Requires: python-netaddr
+%if 0%{?fedora}
 Requires: python-pexpect
+%else
+# EL7 has pexpect-2.3
+Requires: pexpect
+%endif
 Requires: python-ptyprocess
 Requires: python-pandas
 Requires: python-pbr
