@@ -29,7 +29,12 @@ BuildRequires:  git
 Requires: python-babel
 Requires: python-ipaddr
 Requires: python-netaddr
+%if 0%{?fedora}
 Requires: python-pexpect
+%else
+# EL7 has pexpect-2.3
+Requires: pexpect
+%endif
 Requires: python-ptyprocess
 Requires: python-pandas
 Requires: python-pbr
